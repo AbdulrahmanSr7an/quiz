@@ -1,0 +1,92 @@
+[
+  {
+    "question": "What does HTML stand for?",
+    "answers": [
+      {"answer": "Hyper Text Make Language", "bool": false},
+      {"answer": "Hyper Text Markup Language", "bool": true},
+      {"answer": "Hyperlinks and Text Markup Language", "bool": false},
+      {"answer": "Home Tool Markup Language", "bool": false}
+    ]
+  },
+  {
+    "question": "Which HTML element is used for the largest heading?",
+    "answers": [
+      {"answer": "<head>", "bool": false},
+      {"answer": "<h6>", "bool": false},
+      {"answer": "<header>", "bool": false},
+      {"answer": "<h1>", "bool": true}
+    ]
+  },
+  {
+    "question": "What is the correct HTML element for inserting a line break?",
+    "answers": [
+      {"answer": "<lb>", "bool": false},
+      {"answer": "<break>", "bool": false},
+      {"answer": "<br>", "bool": true},
+      {"answer": "<hr>", "bool": false}
+    ]
+  },
+  {
+    "question": "What is the correct HTML for creating a hyperlink?",
+    "answers": [
+      {"answer": "<a href='url'>Link</a>", "bool": true},
+      {"answer": "<a url='url'>Link</a>", "bool": false},
+      {"answer": "<a>url</a>", "bool": false},
+      {"answer": "<link href='url'>Link</link>", "bool": false}
+    ]
+  },
+  {
+    "question": "Which character is used to indicate an end tag?",
+    "answers": [
+      {"answer": "*", "bool": false},
+      {"answer": "<", "bool": false},
+      {"answer": "^", "bool": false},
+      {"answer": "/", "bool": true}
+    ]
+  },
+  {
+    "question": "How can you make a numbered list?",
+    "answers": [
+      {"answer": "<ul>", "bool": false},
+      {"answer": "<ol>", "bool": true},
+      {"answer": "<list>", "bool": false},
+      {"answer": "<dl>", "bool": false}
+    ]
+  },
+  {
+    "question": "Which HTML element is used to display an image?",
+    "answers": [
+      {"answer": "<image>", "bool": false},
+      {"answer": "<pic>", "bool": false},
+      {"answer": "<img>", "bool": true},
+      {"answer": "<src>", "bool": false}
+    ]
+  },
+  {
+    "question": "Which attribute is used to specify the path to an image?",
+    "answers": [
+      {"answer": "link", "bool": false},
+      {"answer": "src", "bool": true},
+      {"answer": "href", "bool": false},
+      {"answer": "alt", "bool": false}
+    ]
+  },
+  {
+    "question": "Which element contains the visible content of an HTML document?",
+    "answers": [
+      {"answer": "<head>", "bool": false},
+      {"answer": "<html>", "bool": false},
+      {"answer": "<body>", "bool": true},
+      {"answer": "<title>", "bool": false}
+    ]
+  },
+  {
+    "question": "Which HTML element is used to define the footer of a document?",
+    "answers": [
+      {"answer": "<section>", "bool": false},
+      {"answer": "<bottom>", "bool": false},
+      {"answer": "<aside>", "bool": false},
+      {"answer": "<footer>", "bool": true}
+    ]
+  }
+]

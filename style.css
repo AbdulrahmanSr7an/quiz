@@ -1,0 +1,210 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+body{
+  background-color: #1d232a;
+}
+
+.content{
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  box-shadow:
+      0 10px 20px -3px rgba(0, 0, 0, 0.4),
+      0 4px 15px -2px rgba(0, 0, 0, 0.2);
+  width: 800px;
+  height: 450px;
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  transform: translate(-50% , -50%);
+  padding: 30px 30px;
+}
+.content .container-chose{
+  display: block;
+}
+.content .quest{
+  font-size: 20px;
+  margin-bottom: 35px;
+  margin-top: 16px;
+  color: #a6adbb;
+  font-weight: bold;
+}
+.content div{
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+}
+.content div label{
+  margin-left: 16px;
+  font-size: 18px;
+  color: #a6adbb;
+  line-height: 1;
+  cursor: pointer;
+}
+input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 26px;
+  height: 26px;
+  border: 2px solid #00A3FF;
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+input[type="radio"]::before{
+  content: "";
+  display: block;
+  width: 0px;
+  height: 0px;
+  background-color: #00A3FF;
+  border-radius: 50%;
+  transition: .3s;
+}
+input[type="radio"]:checked::before {
+  width: 14px;
+  height: 14px;
+}
+#next{
+  background-color: #00a96e;
+  display: block;
+  padding: 15px;
+  border-radius: 12px;
+  border: none;
+  color: white;
+  font-size: 16px;
+  margin-left: auto;
+  cursor: pointer;
+}
+.timer{
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  box-shadow:
+      0 10px 20px -3px rgba(0, 0, 0, 0.4),
+      0 4px 15px -2px rgba(0, 0, 0, 0.2);
+  width: 800px;
+  height: 50px;
+  position: absolute;
+  left: 50%;
+  top: 80%;
+  transform: translate(-50% , -50%);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.category{
+  margin: 42px 0;
+  text-align: center;
+}
+.category p {
+  color: #a6adbb;
+  font-size: 35px;
+  font-weight: bold;
+}
+.timer p{
+  color: white;
+}
+.icons{
+  display: flex;
+  align-items: center;
+}
+
+.icons span{
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border: 1px solid #00a96e;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+.icons .active{
+  background-color: #00a96e;
+}
+.popup {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background-color: white;
+  transform: translate(-50%, -50%);
+  transition: .3s;
+  width: 300px;
+  height: 250px;
+  padding: 30px;
+  text-align: center;
+  border-radius: 10px;
+  opacity: 0;
+  z-index: 10000;
+}
+.popup p{
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+.popup button{
+  background-color: black;
+  color: white;
+  padding: 20px;
+  margin:20px auto;
+  display: block;
+  border-radius: 12px;
+  cursor: pointer;
+}
+input[type="radio"].true {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 26px;
+  height: 26px;
+  border: 2px solid green;
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+input[type="radio"].false {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 26px;
+  height: 26px;
+  border: 2px solid red;
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+input[type="radio"].not-found::before{
+  background-color: transparent;
+  width: 0;
+  height: 0;
+}
+input[type="radio"].true::before{
+  content: "";
+  display: block;
+  width: 14px;
+  height: 14px;
+  background-color: green;
+  border-radius: 50%;
+}
+input[type="radio"].false::before{
+  content: "";
+  display: block;
+  width: 14px;
+  height: 14px;
+  background-color: red;
+  border-radius: 50%;
+}
