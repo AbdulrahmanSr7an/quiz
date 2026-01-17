@@ -1,6 +1,10 @@
 let nextBtn = document.querySelector("#next");
+let btnMode = document.querySelector(".btn-mode");
+let linkMode = document.querySelector(".link-mode");
 let timer = document.querySelector(".timer");
 let p = timer.querySelector("p");
+let pcate = document.querySelector(".pcateg");
+let content = document.querySelector(".content");
 let spanTim = p.querySelector("span");
 let icons = document.querySelector(".icons");
 let spanIcon = icons.querySelectorAll("span");
@@ -9,11 +13,18 @@ let myForm = document.forms[0];
 let number = 0;
 let userAnswer = [];
 let allData;
-// let pQuest = document.querySelector(".quest");
 let grade = 0;
 let setI;
 let containerChose = document.querySelector(".container-chose");
 let popup = document.querySelector(".popup");
+btnMode.addEventListener("click", function () {
+  if (linkMode.getAttribute("href") === "styleDark.css") {
+    linkMode.setAttribute("href","styleLight.css");
+  }
+  else {
+    linkMode.setAttribute("href","styleDark.css");
+  }
+});
 let timerQuest = function () {
   if (number > 0) {
     clearInterval(setI);
@@ -48,11 +59,13 @@ let addInputs = function (numberQuestion, data) {
     containerDiv.appendChild(label);
     containerChose.append(containerDiv);
   }
+  if (spanIcon[number]) {
+    spanIcon[number].classList.add("active");
+  }
 };
 let clickFun = function (data) {
   nextBtn.onclick = function (e) {
     e.preventDefault();
-
     let selectedOption = document.querySelector('input[name="answer"]:checked');
 
     if (selectedOption) {
@@ -61,23 +74,24 @@ let clickFun = function (data) {
       } else {
         userAnswer.push(selectedOption.nextSibling.textContent);
       }
-      if (spanIcon[number]) {
-        spanIcon[number].classList.add("active");
-      }
-      number += 1;
-      if (number < 10) {
-        spanTim.textContent = "6";
-        addInputs(number, data);
-        timerQuest();
-      } else {
-        clearInterval(setI);
-
-        document.body.style.opacity = ".5";
-        popup.style.opacity = "1";
-        document.querySelector(
-          ".pop"
-        ).textContent = `Your Grade Is: ${grade} / 10`;
-      }
+    } else {
+      userAnswer.push("");
+    }
+    
+    number += 1;
+    if (number < 10) {
+      spanTim.textContent = "6";
+      addInputs(number, data);
+      timerQuest();
+    } else {
+      clearInterval(setI);
+      content.style.opacity = ".4";
+      timer.style.opacity = ".4";
+      pcate.style.opacity = ".4";
+      popup.style.display = "flex"
+      document.querySelector(
+        ".pop"
+      ).textContent = `Your Grade Is: ${grade} / 10`;
     }
   };
 };
@@ -115,15 +129,13 @@ let inputAnswer = function (numberQuestion, data) {
     label.textContent = data[numberQuestion].answers[i].answer;
     containerDiv.appendChild(label);
     containerChose.append(containerDiv);
-    if (userAnswer.includes(label.textContent)) {
+    if (userAnswer.includes(label.textContent) && label.textContent !== "") {
       label.style.color = "red";
       inpRadio.classList.add("false");
-    }
-    else if (data[numberQuestion].answers[i].bool === true) {
+    } else if (data[numberQuestion].answers[i].bool === true) {
       label.style.color = "green";
       inpRadio.classList.add("true");
-    }
-    else {
+    } else {
       inpRadio.classList.add("not-found");
     }
   }
@@ -141,15 +153,18 @@ let clickFunAnswer = function (data) {
       nextBtn.style.cursor = "default";
     }
     if (counter <= 9) {
-      spanTim.textContent = "6";
       spanIcon[counter].classList.add("active");
       inputAnswer(counter, data);
     }
   };
 };
 document.querySelector(".popBtn").addEventListener("click", function (e) {
-  document.body.style.opacity = "1";
-  popup.style.opacity = "0";
+  spanTim.innerHTML = 0
+  content.style.opacity = "1";
+  timer.style.opacity = "1";
+  pcate.style.opacity = "1";
+  popup.style.display = "none";
+
   counter = 0;
   inputAnswer(counter, allData);
   clickFunAnswer(allData);
